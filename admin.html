@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Admin Dashboard - Khulani Accounting</title>
+	<link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="module" src="admin.js" defer></script>
+</head>
+<body>
+	<header>
+		<h1>Admin Dashboard</h1>
+		<nav class="navbar">
+			<button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+			<ul class="nav-links">
+				<li><a href="#dashboard-overview" class="active-link">Dashboard</a></li>
+				<li><a href="#content-management">Content</a></li>
+				<li><a href="#bookings-page">Bookings</a></li>
+				<li><a href="#user-management">Users</a></li>
+				<li><a href="#" id="logout-btn">Logout</a></li>
+			</ul>
+			<div class="nav-icons">
+				<!-- Icons for user profile, notifications, etc. -->
+			</div>
+		</nav>
+	</header>
+
+	<main class="container">
+		<section class="panel" id="login-page">
+			<h2>Admin Login</h2>
+			<div class="card">
+				<form id="login-form">
+					<input type="email" id="login-email" placeholder="Email" required>
+					<input type="password" id="login-password" placeholder="Password" required>
+					<button type="submit">Log In</button>
+				</form>
+			</div>
+		</section>
+
+		<section class="panel visible" id="dashboard-overview">
+			<h2>Dashboard</h2>
+			<p id="welcome-message">Welcome to your admin dashboard.</p>
+			<div class="card">
+				<h3>Quick access</h3>
+				<ul class="quick-links">
+					<li><a href="#content-management">Manage content</a></li>
+					<li><a href="#bookings-page">View all bookings</a></li>
+					<li><a href="#user-management">Manage users</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="panel" id="content-management">
+			<h2>Content Management</h2>
+
+			<div class="card">
+				<h3>Add Blog Post</h3>
+				<form id="blog-form">
+					<input type="text" id="blog-title" placeholder="Title" required>
+					<textarea id="blog-content" placeholder="Content" required></textarea>
+					<input type="text" id="blog-image" placeholder="Image URL">
+					<button type="submit">Add Blog</button>
+				</form>
+			</div>
+
+			<div class="card">
+				<h3>Add Vacancy</h3>
+				<form id="vacancy-form">
+					<input type="text" id="vacancy-title" placeholder="Job Title" required>
+					<textarea id="vacancy-desc" placeholder="Description" required></textarea>
+					<input type="text" id="vacancy-image" placeholder="Image URL">
+					<button type="submit">Add Vacancy</button>
+				</form>
+			</div>
+
+			<div class="card">
+				<h3>Add FAQ</h3>
+				<form id="faq-form">
+					<input type="text" id="faq-question" placeholder="Question" required>
+					<textarea id="faq-answer" placeholder="Answer" required></textarea>
+					<button type="submit">Add FAQ</button>
+				</form>
+			</div>
+
+			<div class="card" id="blogs-card">
+				<h3>Current Blogs</h3>
+				<table id="blogs-table" aria-labelledby="blogs-card-heading">
+					<thead>
+						<tr><th>Title</th><th>Date</th><th>Actions</th></tr>
+					</thead>
+					<tbody>
+						<!-- JS will populate current blogs here -->
+					</tbody>
+				</table>
+				<a href="#blogs-card" class="view-all">View All Blogs</a>
+			</div>
+
+			<div class="card" id="vacancies-card">
+				<h3>Current Vacancies</h3>
+				<table id="vacancies-table" aria-labelledby="vacancies-card-heading">
+					<thead>
+						<tr><th>Job Title</th><th>Posted</th><th>Actions</th></tr>
+					</thead>
+					<tbody>
+						<!-- JS will populate current vacancies here -->
+					</tbody>
+				</table>
+				<a href="#vacancies-card" class="view-all">View All Vacancies</a>
+			</div>
+
+			<div class="card" id="faqs-card">
+				<h3>Current FAQs</h3>
+				<table id="faqs-table" aria-labelledby="faqs-card-heading">
+					<thead>
+						<tr><th>Question</th><th>Answer</th><th>Actions</th></tr>
+					</thead>
+					<tbody>
+						<!-- JS will populate current FAQs here -->
+					</tbody>
+				</table>
+				<a href="#faqs-card" class="view-all">View All FAQs</a>
+			</div>
+		</section>
+
+		<section class="panel" id="bookings-page">
+			<h2>Bookings</h2>
+			<div class="card">
+				<h3>All Bookings</h3>
+				<table id="bookings-table" aria-labelledby="bookings-card-heading">
+					<thead>
+						<tr><th>Booking ID</th><th>User ID</th><th>Service</th><th>Date</th><th>Time</th></tr>
+					</thead>
+					<tbody>
+						<!-- JS will populate bookings here -->
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="panel" id="user-management">
+			<h2>User Management</h2>
+			<div class="card">
+				<div class="controls">
+					<input type="text" id="user-search" placeholder="Search users by username or email">
+					<button id="refresh-users">Refresh</button>
+				</div>
+				<div class="status-summary">
+					<p>Currently logged in: <strong id="current-user-status">No active session</strong></p>
+				</div>
+				<table id="users-table">
+					<thead>
+						<tr><th>Username</th><th>Email</th><th>Role</th><th>Actions</th></tr>
+					</thead>
+					<tbody>
+						<!-- JS will populate users here -->
+					</tbody>
+				</table>
+				<a href="#user-management" class="view-all">View All Users</a>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<small>Khulani Accounting Admin</small>
+	</footer>
+
+
+
+</body>
+</html>
