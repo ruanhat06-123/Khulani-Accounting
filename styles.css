@@ -923,6 +923,7 @@ main.container {
   }
 }
 
+
 @media (min-width: 900px) {
   main.container {
     grid-template-columns: 1.2fr 0.8fr;
@@ -1449,4 +1450,134 @@ header,
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
+}
+
+/* 📱 GLOBAL MOBILE OPTIMIZATION */
+@media (max-width: 760px) {
+
+  /* Reduce overall padding */
+  .page {
+    padding: 2.5rem 1rem;
+  }
+
+  /* Headings scale better */
+  .page h1, .page h2 {
+    font-size: 1.8rem;
+  }
+
+  .page p {
+    font-size: 0.95rem;
+  }
+
+  /* STACK ALL ROW LAYOUTS */
+  .service-row,
+  .about-row {
+    flex-direction: column !important;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  /* Images full width */
+  .service-image img,
+  .about-image img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  /* Text spacing improvements */
+  .service-text,
+  .about-text {
+    padding: 10px 0;
+  }
+
+  .service-text p,
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ================= NAVBAR ================= */
+
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-icons {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  /* ================= BUTTONS ================= */
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  /* ================= BOOK CARDS ================= */
+
+  .book-grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .book-card {
+    max-width: 100%;
+  }
+
+  /* ================= PRICING ================= */
+
+  .pricing-grid {
+    flex-direction: column;
+  }
+
+  .plan {
+    width: 100%;
+  }
+
+  /* ================= MODALS ================= */
+
+  .modal-content {
+    width: 90%;
+    margin: 30% auto;
+  }
+
+  /* ================= POPUP ================= */
+
+  .popup-content {
+    width: 95%;
+    height: auto;
+    max-height: 90vh;
+    padding: 1rem;
+  }
+
+  /* ================= TABLES ================= */
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+
+  /* ================= CONTACT ================= */
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .contact-form textarea {
+    min-height: 180px;
+  }
+
 }
