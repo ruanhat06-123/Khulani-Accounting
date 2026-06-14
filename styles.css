@@ -860,12 +860,69 @@ main.container {
   border-radius: 0.5rem;
   border-left: 4px solid #2575fc;
 }
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  color: #64748b;
-  font-size: 0.95rem;
+/* 📱 Mobile footer optimization */
+@media (max-width: 760px) {
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  /* Better spacing for text */
+  .footer-left p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Stack subscribe form nicely */
+  .footer-right .subscribe-form {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 0;
+  }
+
+  /* Full width input */
+  .footer-right .subscribe-form input {
+    width: 100%;
+    max-width: 100%;
+    min-width: unset;
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  /* Full width button */
+  .footer-right .subscribe-form button {
+    width: 100%;
+    border-radius: 12px;
+    padding: 0.85rem;
+  }
+
+  /* Footer icons centered and spaced */
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Smaller footer text */
+  .footer-bottom {
+    font-size: 0.7rem;
+    margin-top: 1rem;
+  }
 }
+
 @media (min-width: 900px) {
   main.container {
     grid-template-columns: 1.2fr 0.8fr;
