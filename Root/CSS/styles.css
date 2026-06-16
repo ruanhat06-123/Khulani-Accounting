@@ -1376,6 +1376,29 @@ header,
   }
 }
 
+/* smooth fade into footer */
+footer::before {
+  content: "";
+  display: block;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
+  margin-bottom: -40px;
+}
+/* ✅ BLENDED FOOTER */
+footer {
+  background: linear-gradient(to bottom right, #059d00, #6a11cb);
+  color: #fff;
+  padding: 2rem;
+  font-size: 0.95rem;
+  width: 100%;
+  margin-top: 0; /* remove any gap */
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* soften section transition */
+.page {
+  margin-bottom: 0;
+}
 .popup {
   display: none; /* hidden until triggered */
   position: fixed;
